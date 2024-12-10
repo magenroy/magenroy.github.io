@@ -1,5 +1,6 @@
-# SOURCE: https://book.leptos.dev/deployment/csr.html#github-pages
-
+# SOURCE:
+# https://book.leptos.dev/deployment/csr.html#github-pages
+# https://github.com/diversable/deploy_leptos_csr_to_gh_pages/blob/ad33d6a848b0671fc6e1967ca1593eedb7e8c6a1/.github/workflows/gh-pages-deploy.ym
 name: Release to Github Pages
 
 on:
