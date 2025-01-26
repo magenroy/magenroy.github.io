@@ -64,11 +64,11 @@ jobs:
 
 
       # Deploy to gh-pages branch
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: main
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     folder: dist
+      #     branch: main
 
 
       # Deploy with Github Static Pages
