@@ -1,9 +1,8 @@
 use leptos::*;
+use mount::mount_to_body;
 
 #[component]
-fn App(increment: i32) -> impl IntoView {
-    let (count, set_count) = create_signal(0);
-
+fn App() -> impl IntoView {
     view! {
     <div class="container">
 
@@ -15,16 +14,6 @@ fn App(increment: i32) -> impl IntoView {
         <h1>"Welcome to Leptos"</h1>
         <h2><i>"On Github Pages"</i></h2>
 
-        <button
-            on:click= move |_| {
-                set_count(count() + increment)
-            }
-        >
-            "Click me: "
-            {count}
-        </button>
-
-
     </div>
     }
 }
@@ -32,7 +21,7 @@ fn App(increment: i32) -> impl IntoView {
 fn main() {
     mount_to_body(|| {
         view! {
-            <App increment=5 />
+            <App/>
         }
     })
 }
