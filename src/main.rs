@@ -1,4 +1,4 @@
-use leptos::prelude::*;
+use leptos::*;
 
 #[component]
 fn App() -> impl IntoView {
@@ -15,7 +15,7 @@ fn App() -> impl IntoView {
 fn main() {
     mount_to_body(|| {
         view! {
-            <App/>
+            <App />
         }
     })
 }
