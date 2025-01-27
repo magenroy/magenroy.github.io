@@ -1,21 +1,38 @@
-use leptos::*;
+use dioxus::prelude::*;
 
-#[component]
-fn App() -> impl IntoView {
-    view! {
-    <div class="container">
+use components::Navbar;
+use views::{Blog, Home};
 
-        <h1>"Welcome to Leptos"</h1>
-        <h2><i>"On Github Pages"</i></h2>
+mod components;
+mod views;
 
-    </div>
-    }
+#[derive(Debug, Clone, Routable, PartialEq)]
+#[rustfmt::skip]
+enum Route {
+    #[layout(Navbar)]
+    #[route("/")]
+    Home {},
+    #[route("/blog/:id")]
+    Blog { id: i32 },
 }
 
+const FAVICON: Asset = asset!("/assets/favicon.ico");
+const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
+
 fn main() {
-    mount_to_body(|| {
-        view! {
-            <App />
-        }
-    })
+    dioxus::launch(App);
+}
+
+#[component]
+fn App() -> Element {
+    // Build cool things ✌️
+
+    rsx! {
+        // Global app resources
+        document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "stylesheet", href: MAIN_CSS }
+
+
+        Router::<Route> {}
+    }
 }

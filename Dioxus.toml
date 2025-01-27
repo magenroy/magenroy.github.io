@@ -1,0 +1,27 @@
+[application]
+
+# App (Project) Name
+name = "magenroy-github-io"
+out_dir = "docs"
+default_platform = "web"
+
+[web.app]
+base_path = "magenroy.github.io"
+
+# HTML title tag content
+title = "magenroy-github-io"
+
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
