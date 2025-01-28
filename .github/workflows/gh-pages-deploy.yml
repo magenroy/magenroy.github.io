@@ -89,8 +89,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist dir
-          path: './docs/public'
           # path: './static/' # for use with ssg
+          path: './docs/public' # actually use this with ssg since I just copy the static files to docs/public
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
