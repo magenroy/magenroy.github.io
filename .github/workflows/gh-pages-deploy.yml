@@ -41,6 +41,6 @@ jobs:
       - name: Deploy Project 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          branch: main
+          branch: gh-pages
           folder: ./docs/public
           clean: false
