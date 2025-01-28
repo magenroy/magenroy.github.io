@@ -40,9 +40,27 @@ jobs:
           dx bundle
           find . -name "index.html"
 
-      - name: Deploy Project 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      # Deploy to gh-pages branch
+      # - name: Deploy Project 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4.4.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: ./docs/public
+      #     clean: false
+
+      # Deploy with Github Static Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
         with:
-          branch: gh-pages
-          folder: ./docs/public
-          clean: false
+          enablement: true
+          # token:
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload dist dir
+          path: './docs/public
+
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v3
