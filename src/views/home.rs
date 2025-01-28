@@ -6,10 +6,10 @@ use dioxus::prelude::*;
 pub fn Home() -> Element {
     rsx! {
         div {
-            id: "main",
+            id: "main_content",
             Header {}
             div {
-            id: "content",
+            class: "content",
                 About {}
                 Seminars {}
                 Resources {}

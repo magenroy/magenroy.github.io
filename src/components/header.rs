@@ -5,7 +5,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn Header() -> Element {
     rsx! {
-        header {
+        header { class: "content",
              table {
                 tr {
                     td { "valign": "top",
