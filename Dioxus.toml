@@ -6,7 +6,7 @@ out_dir = "docs"
 default_platform = "web"
 
 [web.app]
-base_path = "public"
+base_path = "magenroy.github.io/public"
 
 # HTML title tag content
 title = "magenroy-github-io"
