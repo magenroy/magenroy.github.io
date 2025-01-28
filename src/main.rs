@@ -9,7 +9,7 @@ mod views;
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
-    // #[layout(Navbar)]
+    #[layout(Navbar)]
     #[route("/")]
     Home {},
     #[route("/blog/:id")]
