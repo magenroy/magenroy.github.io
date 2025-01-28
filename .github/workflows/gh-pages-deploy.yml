@@ -12,5 +12,5 @@ jobs:
       - name: "Dioxus Deploy"
         uses: DioxusLabs/deploy-action@0.1.2
         with:
-          outDirectory: "magenroy.github.io/target/dx/magenroy-github-io/release/web/public"
+          outDirectory: "magenroy.github.io/magenroy.github.io/target/dx/magenroy-github-io/release/web/public"
           
