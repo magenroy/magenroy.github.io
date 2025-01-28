@@ -13,12 +13,31 @@ on:
 #         uses: DioxusLabs/deploy-action@0.1.2
 #         with:
 #           outDirectory: "home/runner/work/magenroy.github.io/magenroy.github.io/target/dx/magenroy-github-io/release/web/public"
-          
+
+permissions:
+  contents: write # for committing to gh-pages branch.
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false 
+
 jobs:
-  build-deploy:
+  # build-deploy:
+  Github-Pages-Release:
+
+    timeout-minutes: 10
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions-rs/toolchain@v1.0.6
         with:
           toolchain: stable
