@@ -61,7 +61,8 @@ jobs:
 
       - name: Build Project 🎁
         shell: bash
-        run: dx bundle --release
+        # run: dx bundle --release --platform web
+        run: dx bundle --release --platform web --ssg
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀

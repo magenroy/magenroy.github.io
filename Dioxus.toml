@@ -9,7 +9,7 @@ default_platform = "web"
 # base_path = "public"
 
 # HTML title tag content
-title = "magenroy-github-io"
+title = "Roy Magen"
 
 # include `assets` in web platform
 [web.resource]
