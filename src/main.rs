@@ -16,7 +16,7 @@ enum Route {
     Blog { id: i32 },
 }
 
-const FAVICON: Asset = asset!("/assets/favicon.ico");
+const FAVICON: Asset = asset!("/assets/graphics/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 
 fn main() {
@@ -29,7 +29,7 @@ fn App() -> Element {
 
     rsx! {
         // Global app resources
-        // document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
 
