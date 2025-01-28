@@ -1,30 +1,25 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <link data-trunk rel="css" rel="stylesheet" href="style.css" /> -->
-
-	<!-- include support for `wasm-bindgen --weak-refs` - see: https://rustwasm.github.io/docs/wasm-bindgen/reference/weak-references.html -->
-	
-<script type="module">
-import init, * as bindings from 'magenroy.github.io/website-78fab7a09dc1835f.js';
-const wasm = await init({ module_or_path: 'magenroy.github.io/website-78fab7a09dc1835f_bg.wasm' });
-
-
-window.wasmBindings = bindings;
-
-
-dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
-
-</script>
-
-	<title>Leptos Example</title>
-<link rel="modulepreload" href="magenroy.github.io/website-78fab7a09dc1835f.js" crossorigin="anonymous" integrity="sha384-dVWQNWlGFpbNuNgegRn+WzCA3SYOKBpXAVc3Ks67OeGHBSAjYPRVx5zR52nr+ogo"><link rel="preload" href="magenroy.github.io/website-78fab7a09dc1835f_bg.wasm" crossorigin="anonymous" integrity="sha384-Ex/3fKlC8JnLvwZG/vB/O/MNEf8kaYqXFAGvwaxi5xaWCs3RJs7hQjHQpaRZmEeT" as="fetch" type="application/wasm"></head>
-
-<body>
-	Test
-</body>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>magenroy-github-io</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+  <link rel="preload" as="script" href="/public/assets/magenroy-github-io-b86d70895502fc18.js" crossorigin><link rel="preload" as="fetch" type="application/wasm" href="/public/assets/magenroy-github-io_bg-5ef24b2b2ef7d726.wasm" crossorigin></head>
+  <body>
+    <div id="main"></div>
+  <script>
+            // We can't use a module script here because we need to start the script immediately when streaming
+            import("/public/assets/magenroy-github-io-b86d70895502fc18.js").then(
+                ({ default: init }) => {
+                init("/public/assets/magenroy-github-io_bg-5ef24b2b2ef7d726.wasm").then((wasm) => {
+                    if (wasm.__wbindgen_start == undefined) {
+                    wasm.main();
+                    }
+                });
+                }
+            );
+            </script>
+            
+            </body>
 </html>
