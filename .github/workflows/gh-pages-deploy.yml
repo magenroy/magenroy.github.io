@@ -42,15 +42,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions-rs/toolchain@v1.0.6
         with:
-          targets: wasm32-unknown-unknown
-      # - uses: actions-rs/toolchain@v1.0.6
-      #   with:
-      #     toolchain: stable
-      #     profile: minimal
-      #     target: wasm32-unknown-unknown
-      #     override: true
+          toolchain: stable
+          profile: minimal
+          target: wasm32-unknown-unknown
+          override: true
       - uses: Swatinem/rust-cache@v2
 
         # REF: https://dioxuslabs.com/learn/0.6/getting_started/#install-cargo-binstall
@@ -64,9 +61,7 @@ jobs:
 
       - name: Build Project 🎁
         shell: bash
-        run: dx bundle --platform web
-        # run: dx bundle --release --platform web
-        # run: dx bundle --release --platform web --ssg
+        run: dx bundle --release
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
@@ -78,18 +73,17 @@ jobs:
 
       # Deploy with Github Static Pages
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
         with:
           enablement: true
           # token:
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           # Upload dist dir
           path: './docs/public'
-          # path: './static/' # for use with ssg
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
