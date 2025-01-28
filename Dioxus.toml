@@ -2,7 +2,7 @@
 
 # App (Project) Name
 name = "magenroy-github-io"
-out_dir = "dist"
+out_dir = "docs"
 default_platform = "web"
 
 [web.app]
