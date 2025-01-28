@@ -1,42 +1,44 @@
+* {
+	/* border: 1px dotted red; */
+	/* padding: 0;
+	margin: 0; */
+}
+
 body {
-    background-color: #0f1116;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
+	font-family: "Arial", sans-serif;
+	width: 100%;
+	/* min-height: 100%; */
+	/* background-color: #EEEEEE; */
+	/* border-bottom: 1px solid #BBBBBB; */
+	padding: 0;
+	margin: 0;
 }
 
-#hero {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#main {
+	padding-left: 3%;
+	padding-right: 3%;
+	/* border-right: 1px solid #BBBBBB; */
+	/* border-left: 1px solid #BBBBBB; */
+	background-color: white;
 }
 
-#links {
-    width: 400px;
-    text-align: left;
-    font-size: x-large;
-    color: white;
-    display: flex;
-    flex-direction: column;
+header {
+	border-bottom: 1px solid #BBBBBB;
+}
+header table,td {
+	border: none;
 }
 
-#links a {
-    color: white;
-    text-decoration: none;
-    margin-top: 20px;
-    margin: 10px 0px;
-    border: white 1px solid;
-    border-radius: 5px;
-    padding: 10px;
+#content {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	/* padding-left: 3%; */
+	/* padding-right: 3%; */
 }
 
-#links a:hover {
-    background-color: #1f1f1f;
-    cursor: pointer;
-}
-
-#header {
-    max-width: 1200px;
+footer {
+	padding: 2%;
+	text-align: center;
+	font-family: "Times New Roman";
+	border-top: 1px solid #BBBBBB;
 }
