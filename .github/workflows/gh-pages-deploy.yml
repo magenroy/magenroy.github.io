@@ -36,9 +36,7 @@ jobs:
       - name: Build Project 🎁
         shell: bash
         # run: cd ${{ inputs.rootPath }} && dx build --${{ inputs.buildMode }} && cp ./${{ inputs.outDirectory }}/index.html ./${{ inputs.outDirectory }}/404.html
-        run: |
-          dx bundle
-          ls --tree
+        run: dx bundle
 
       - name: Deploy Project 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
