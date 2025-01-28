@@ -1,5 +1,9 @@
 name: github pages
 
+# REF: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#creating-a-custom-github-actions-workflow-to-publish-your-site
+# SOURCE:https://book.leptos.dev/deployment/csr.html#admonition-example
+# SOURCE:https://github.com/DioxusLabs/deploy-action/blob/main/action.yml
+
 on:
   push:
     branches:
@@ -50,11 +54,10 @@ jobs:
         run: |
           # cargo install cargo-binstall
           curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-          cargo binstall dioxus-cli --force
+          cargo binstall dioxus-cli --force # for some reason need to force or it does not work
 
       - name: Build Project 🎁
         shell: bash
-        # run: cd ${{ inputs.rootPath }} && dx build --${{ inputs.buildMode }} && cp ./${{ inputs.outDirectory }}/index.html ./${{ inputs.outDirectory }}/404.html
         run: dx bundle --release
 
       # Deploy to gh-pages branch
