@@ -3,6 +3,7 @@
 	/* color: #ffffff; */
     /* display: flex; */
     /* flex-direction: row; */
+	display: none;
 	padding: 1%;
 	margin: 0;
 	left: 0%;
