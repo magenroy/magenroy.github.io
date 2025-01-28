@@ -84,7 +84,7 @@ jobs:
         with:
           # Upload dist dir
           # path: './docs/public'
-          path: './docs/'
+          path: './static/' # for use with ssg
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
