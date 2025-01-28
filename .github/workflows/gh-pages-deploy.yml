@@ -31,7 +31,7 @@ jobs:
         run: |
           # cargo install cargo-binstall
           curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-          cargo binstall dioxus-cli
+          cargo binstall dioxus-cli --force
 
       - name: Build Project 🎁
         shell: bash
