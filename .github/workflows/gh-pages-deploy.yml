@@ -42,12 +42,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1.0.6
+      - uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
-          profile: minimal
-          target: wasm32-unknown-unknown
-          override: true
+          targets: wasm32-unknown-unknown
+      # - uses: actions-rs/toolchain@v1.0.6
+      #   with:
+      #     toolchain: stable
+      #     profile: minimal
+      #     target: wasm32-unknown-unknown
+      #     override: true
       - uses: Swatinem/rust-cache@v2
 
         # REF: https://dioxuslabs.com/learn/0.6/getting_started/#install-cargo-binstall
@@ -61,8 +64,9 @@ jobs:
 
       - name: Build Project 🎁
         shell: bash
+        run: dx bundle --platform web
         # run: dx bundle --release --platform web
-        run: dx bundle --release --platform web --ssg
+        # run: dx bundle --release --platform web --ssg
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
