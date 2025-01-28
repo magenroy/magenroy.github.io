@@ -83,7 +83,8 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload dist dir
-          path: './docs/public'
+          # path: './docs/public'
+          path: './docs/'
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment

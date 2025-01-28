@@ -1,7 +1,7 @@
 [application]
 
 # App (Project) Name
-name = "magenroy-github-io"
+name = "magenroy website"
 out_dir = "docs"
 default_platform = "web"
 
