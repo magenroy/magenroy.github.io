@@ -55,9 +55,7 @@ jobs:
       - name: Build Project 🎁
         shell: bash
         # run: cd ${{ inputs.rootPath }} && dx build --${{ inputs.buildMode }} && cp ./${{ inputs.outDirectory }}/index.html ./${{ inputs.outDirectory }}/404.html
-        run: |
-          dx bundle
-          find . -name "index.html"
+        run: dx bundle --release
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
