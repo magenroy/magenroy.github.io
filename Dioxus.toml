@@ -2,11 +2,11 @@
 
 # App (Project) Name
 name = "magenroy-github-io"
-out_dir = "docs"
+out_dir = "dist"
 default_platform = "web"
 
 [web.app]
-base_path = "public"
+# base_path = "public"
 
 # HTML title tag content
 title = "magenroy-github-io"
