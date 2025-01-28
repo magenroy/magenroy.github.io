@@ -5,12 +5,42 @@ on:
     branches:
       - main
 
+# jobs:
+#   build-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: "Dioxus Deploy"
+#         uses: DioxusLabs/deploy-action@0.1.2
+#         with:
+#           outDirectory: "home/runner/work/magenroy.github.io/magenroy.github.io/target/dx/magenroy-github-io/release/web/public"
+          
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: "Dioxus Deploy"
-        uses: DioxusLabs/deploy-action@0.1.2
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1.0.6
         with:
-          outDirectory: "home/runner/work/magenroy.github.io/magenroy.github.io/target/dx/magenroy-github-io/release/web/public"
-          
+          toolchain: stable
+          profile: minimal
+          target: wasm32-unknown-unknown
+          override: true
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Dioxus-CLI
+        shell: bash
+        run: |
+          # cargo install cargo-binstall
+          curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+          cargo binstall dioxus-cli
+
+      - name: Build Project 🎁
+        shell: bash
+        # run: cd ${{ inputs.rootPath }} && dx build --${{ inputs.buildMode }} && cp ./${{ inputs.outDirectory }}/index.html ./${{ inputs.outDirectory }}/404.html
+        run: dx bundle
+
+      - name: Deploy Project 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          branch: main
+          folder: ./docs/public
+          clean: false
