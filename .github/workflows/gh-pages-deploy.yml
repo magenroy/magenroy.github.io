@@ -49,6 +49,9 @@ jobs:
           target: wasm32-unknown-unknown
           override: true
       - uses: Swatinem/rust-cache@v2
+
+        # REF: https://dioxuslabs.com/learn/0.6/getting_started/#install-cargo-binstall
+        # using binstall is much faster than `cargo install dioxus-cli`
       - name: Install Dioxus-CLI
         shell: bash
         run: |
