@@ -1,7 +1,7 @@
 [application]
 
 # App (Project) Name
-name = "magenroy website"
+name = "magenroy-github-io"
 out_dir = "docs"
 default_platform = "web"
 
@@ -9,7 +9,7 @@ default_platform = "web"
 # base_path = "public"
 
 # HTML title tag content
-title = "Roy Magen"
+title = "magenroy-github-io"
 
 # include `assets` in web platform
 [web.resource]
