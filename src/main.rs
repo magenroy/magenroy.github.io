@@ -41,8 +41,8 @@ fn App() -> Element {
     rsx! {
         document::Meta { name: "description", content: "Website of Roy Magen" }
         document::Meta { name: "author", content: "Roy Magen" }
-        // document::Meta { property: "description", content: "Website of Roy Magen" }
-        // document::Meta { property: "name", content: "Roy Magen" }
+        document::Meta { itemprop: "description", content: "Website of Roy Magen" }
+        document::Meta { itemprop: "name", content: "Roy Magen" }
 
         // Global app resources
         document::Link { rel: "icon", href: FAVICON }
