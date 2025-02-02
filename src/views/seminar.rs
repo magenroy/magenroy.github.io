@@ -6,7 +6,7 @@ struct SeminarApi {
     main: String,
 }
 
-const SEMINAR_STYLE: Asset = asset!("/assets/styling/seminar.css");
+// const SEMINAR_STYLE: Asset = asset!("/assets/styling/seminar.css");
 
 #[component]
 pub fn Seminar(name: String) -> Element {
@@ -43,7 +43,7 @@ pub fn Seminar(name: String) -> Element {
     };
 
     rsx! {
-        document::Link { rel: "stylesheet", href: SEMINAR_STYLE }
+        // document::Link { rel: "stylesheet", href: SEMINAR_STYLE }
         main {
             {Content}
         }
