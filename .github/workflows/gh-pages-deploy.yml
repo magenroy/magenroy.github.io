@@ -67,8 +67,8 @@ jobs:
         # run: dx bundle --platform web
         # run: dx bundle --release --platform web
         run: |
-          dx bundle --platform web --ssg
-          # dx bundle --release --platform web --ssg
+          # dx bundle --platform web --ssg
+          dx bundle --release --platform web --ssg
           cp -r ./static/* ./docs/public
 
       # Deploy to gh-pages branch

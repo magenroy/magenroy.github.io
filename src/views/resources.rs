@@ -1,5 +1,7 @@
 use dioxus::prelude::*;
 
+use crate::components::Header;
+
 
 
 #[derive(serde::Deserialize)]
@@ -9,6 +11,41 @@ struct ResourceListApi {
 }
 
 const RESOURCELIST_DIR: Asset = asset!("/assets/static/resources/");
+
+#[component]
+pub fn ResourceLists() -> Element {
+    let path = RESOURCELIST_DIR.resolve();
+    let Content: Element = match std::fs::read_dir(path) {
+        Ok(x) => rsx! {
+            "a"
+        },
+        Err(_) => rsx! {
+            "b"
+        },
+    }; 
+
+    rsx! {
+        Header {  }
+        main { class: "content",
+            section { id: "resources",
+                h2 {"Resources"}
+                p { "These are unorganized lists of resources on various topics that I decided to collect at some point in the beginning of my PhD" }
+                // {Content}
+                ul {
+                    li {
+                        a { href: "https://math.columbia.edu/~magenroy/resources.html", "Unsorted resources" }
+                    }
+                    li {
+                        a { href: "https://math.columbia.edu/~magenroy/DAG-resources.html", "DAG/SAG resources" }
+                    }
+                    li {
+                        a { href: "https://math.columbia.edu/~magenroy/Motives-resources.html", "Motives resources" }
+                    }
+                }
+            }
+        }
+    }
+}
 
 #[component]
 pub fn ResourceList(name: String) -> Element {

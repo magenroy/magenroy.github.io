@@ -13,7 +13,7 @@ struct SeminarApi {
 const SEMINAR_DIR: Asset = asset!("/assets/static/seminars/");
 
 #[component]
-pub fn SeminarList() -> Element {
+pub fn Seminars() -> Element {
     let path = SEMINAR_DIR.resolve();
     let Content: Element = match std::fs::read_dir(path) {
         Ok(x) => rsx! {
@@ -30,7 +30,18 @@ pub fn SeminarList() -> Element {
             section { id: "seminars",
                 h2 {"Seminars"}
                 p { "Seminars I have organized:" }
-                {Content}
+                // {Content}
+                ul {
+                    li {
+                    a { href: "https://math.columbia.edu/~magenroy/DAG-seminar.html", "Derived algebraic geometry seminar at Columbia University" }
+                    }
+                    li {
+                    a { href: "https://math.columbia.edu/~magenroy/motivicseminar.html", "Motivic homotopy theory seminar at Columbia University" }
+                    }
+                    li {
+                    a { href: "https://math.columbia.edu/~magenroy/MilnorWittMotivesSeminar.html", "Milnor-Witt motives seminar at Columbia University" }
+                    }
+                }
             }
         }
     }
