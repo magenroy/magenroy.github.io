@@ -1,5 +1,7 @@
 use dioxus::{logger, prelude::*};
 
+use crate::components::Header;
+
 #[derive(serde::Deserialize)]
 struct SeminarApi {
     header: String,
@@ -11,29 +13,51 @@ struct SeminarApi {
 const SEMINAR_DIR: Asset = asset!("/assets/static/seminars/");
 
 #[component]
+pub fn SeminarList() -> Element {
+    let path = SEMINAR_DIR.resolve();
+    let Content: Element = match std::fs::read_dir(path) {
+        Ok(x) => rsx! {
+            "a"
+        },
+        Err(_) => rsx! {
+            "b"
+        },
+    }; 
+
+    rsx! {
+        Header {  }
+        main { class: "content",
+            section { id: "seminars",
+                h2 {"Seminars"}
+                p { "Seminars I have organized:" }
+                {Content}
+            }
+        }
+    }
+}
+
+#[component]
 pub fn Seminar(name: String) -> Element {
     // let path = format!("assets/static/seminars/{}.toml", name);
 
     let mut path = SEMINAR_DIR.resolve();
     path.push(&name);
 
-    // logger::tracing::debug!("{:?}", path);
+    logger::tracing::debug!("{:?}", path);
 
     let Content: Element = match std::fs::read_to_string(path) {
         Ok(c) => {
             match toml::from_str(&c) {
-                Ok(SeminarApi { header, main }) => {
-                    rsx!{
-                        header { div { class: "content",
-                            dangerous_inner_html: "{header}",
-                        } }
-                        main { class: "content", class: "seminar",
-                            dangerous_inner_html: "{main}",
-                        }
+                Ok(SeminarApi { header, main }) => rsx! {
+                    header { div { class: "content",
+                        dangerous_inner_html: "{header}",
+                    } }
+                    main { class: "content", class: "seminar",
+                        dangerous_inner_html: "{main}",
                     }
                 },
                 Err(_) => rsx! {
-                        main { class: "error",
+                    main { class: "error",
                         h1 { "Error loading seminar webpage" }
                         pre { color: "red", "log:\nattemped to load {name:?}" }
                     }

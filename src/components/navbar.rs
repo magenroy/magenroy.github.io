@@ -16,8 +16,8 @@ pub fn Navbar() -> Element {
                 }
 
                 Link {
-                    to: Route::Seminar { name: "DAG".into() },
-                    "Seminar"
+                    to: Route::SeminarList {},
+                    "Seminars"
                 }
 
                 /* Link {

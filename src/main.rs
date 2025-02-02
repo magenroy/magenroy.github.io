@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 
 use components::Navbar;
 use components::Header;
-use views::{Blog, Home, Seminar, ResourceList};
+use views::{Blog, Home, SeminarList, Seminar, ResourceList};
 
 mod components;
 mod views;
@@ -13,6 +13,9 @@ enum Route {
     #[layout(Navbar)]
     #[route("/")]
     Home {},
+
+    #[route("/seminar")]
+    SeminarList {},
 
     #[route("/seminar/:name")]
     Seminar { name: String },
