@@ -31,18 +31,18 @@ const FAVICON: Asset = asset!("/assets/graphics/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 
 fn main() {
-    dioxus::launch(App);
+    // dioxus::launch(App);
 
     // REF: https://dioxuslabs.com/blog/release-060#static-site-generation-and-isg
-    // dioxus::LaunchBuilder::new()
-    //     .with_cfg(server_only! {
-    //         ServeConfig::builder()
-    //             // turn on incremental site generation with the .incremental() method
-    //             .incremental(IncrementalRendererConfig::new())
-    //             .build()
-    //             .unwrap()
-    //     })
-    //     .launch(App)
+    dioxus::LaunchBuilder::new()
+        .with_cfg(server_only! {
+            ServeConfig::builder()
+                // turn on incremental site generation with the .incremental() method
+                .incremental(IncrementalRendererConfig::new())
+                .build()
+                .unwrap()
+        })
+        .launch(App)
 }
 
 #[component]

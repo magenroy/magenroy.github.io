@@ -64,11 +64,11 @@ jobs:
 
       - name: Build Project 🎁
         shell: bash
-        run: dx bundle --platform web
+        # run: dx bundle --platform web
         # run: dx bundle --release --platform web
-        # run: |
-        #   dx bundle --release --platform web --ssg
-        #   cp ./static/* ./docs/public
+        run: |
+          dx bundle --release --platform web --ssg
+          cp ./static/* ./docs/public
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
