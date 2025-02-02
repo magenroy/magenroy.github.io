@@ -5,6 +5,12 @@ name = "magenroy-website"
 out_dir = "docs"
 default_platform = "web"
 
+[bundle]
+# icon = []
+category = "Personal Website"
+short_description = "Personal website of Roy Magen"
+long_description = "Personal website of Roy Magen"
+
 [web.app]
 # base_path = "public"
 

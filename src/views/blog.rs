@@ -8,7 +8,7 @@ pub fn Blog(id: i32) -> Element {
     rsx! {
         document::Link { rel: "stylesheet", href: BLOG_CSS}
 
-        div {
+        main { class: "content",
             id: "blog",
 
             // Content

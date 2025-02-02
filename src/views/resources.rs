@@ -1,33 +1,32 @@
 use dioxus::prelude::*;
 
+
+
 #[derive(serde::Deserialize)]
-struct SeminarApi {
+struct ResourceListApi {
     header: String,
-    main: String,
+    content: String,
 }
 
-const SEMINAR_STYLE: Asset = asset!("/assets/styling/seminar.css");
-
 #[component]
-pub fn Seminar(name: String) -> Element {
-    let path = format!("assets/static/seminars/{}.toml", name);
+pub fn ResourceList(name: String) -> Element {
+    let path = format!("assets/static/resources/{}.toml", name);
 
     let Content: Element = match std::fs::read_to_string(path) {
         Ok(c) => {
             match toml::from_str(&c) {
-                Ok(SeminarApi { header, main }) => {
+                Ok(ResourceListApi { header, content }) => {
                     rsx!{
-                        header { div { class: "content",
-                            dangerous_inner_html: "{header}",
-                        } }
-                        main { class: "content", class: "seminar",
-                            dangerous_inner_html: "{main}",
+                        header { div { class: "content", "{header}" } }
+                        main { class: "content",
+                            dangerous_inner_html: "{content}",
                         }
                     }
                 },
                 Err(_) => rsx! {
                         main { class: "error",
-                        h1 { "Error loading seminar webpage" }
+                        h1 { "Resource list error" }
+                        p { "Error parsing resource list" }
                         pre { color: "red", "log:\nattemped to load {name:?}" }
                     }
                 }
@@ -35,7 +34,7 @@ pub fn Seminar(name: String) -> Element {
         },
         Err(_) => rsx! {
             main { class: "error",
-                h1 { "Seminar not found" }
+                h1 { "Resource list not found" }
                 p { "The page you requested doesn't exist." }
                 pre { color: "red", "log:\nattemped to load {name:?}" }
             }
@@ -43,7 +42,6 @@ pub fn Seminar(name: String) -> Element {
     };
 
     rsx! {
-        document::Link { rel: "stylesheet", href: SEMINAR_STYLE }
         main {
             {Content}
         }

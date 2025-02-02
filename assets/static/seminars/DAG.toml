@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>DAG Seminar</title>
-<style>
-
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-
-</style>
-
-</head>
-<body>
-
+header = """
 <h3> Columbia-Penn Fall 2020 DAG learning seminar </h3>
 
 The goal of this seminar is to learn the basics of derived algebraic geometry
@@ -37,46 +21,38 @@ on descent in algebraic K-theory </a>.
 
 If you would like to participate, contact Roy Magen or Elijah Gunther.
 
-<hr>
+"""
 
+main = """
 Quick information on presentable categories <a href="Presentable.pdf"> here. </a>
 
 <br>
 
 <h4> References: </h4>
 <ul>
-	<li> <a href="https://www.math.ias.edu/~lurie/papers/HTT.pdf"> Higher Topos
-			Theory </a>
-	<li> <a href="https://www.math.ias.edu/~lurie/papers/HA.pdf"> Higher
-			Algebra </a> (September 2017 version)
-	<li> Lurie: <a
-			href="https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf">
-			Spectral Algebraic Geometry </a> (see chapter 25 in particular)
-	<li> Gepner: <a href="https://arxiv.org/abs/1907.02904"> An Introduction to
-			Higher Categorical Algebra </a>
+	<li> <a href="https://www.math.ias.edu/~lurie/papers/HTT.pdf"> Higher Topos Theory </a> </li>
+	<li> <a href="https://www.math.ias.edu/~lurie/papers/HA.pdf"> Higher Algebra </a> (September 2017 version) </li>
+	<li> Lurie: <a href="https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf">
+			Spectral Algebraic Geometry </a> (see chapter 25 in particular) </li>
+	<li> Gepner: <a href="https://arxiv.org/abs/1907.02904"> An Introduction to Higher Categorical Algebra </a> </li>
 	<li> Adeel Khan's lecture notes: <ul>
 			<li> <strong> Main reference: </strong>
-				<a href="https://www.preschema.com/lecture-notes/kdescent/">
-					Descent in algebraic K-theory </a> 2017/2018
-			<li> <a href="https://www.preschema.com/lecture-notes/grr/">
-					Grothendieck-Riemann-Roch theorem </a> 2018
-			<li> Helpful for filling in details: <a
-					href="https://www.preschema.com/teaching/2020-ss/kdescent/">
-					Descent in algebraic K-theory </a> 2020
-		</ul>
+				<a href="https://www.preschema.com/lecture-notes/kdescent/"> Descent in algebraic K-theory </a> 2017/2018 </li>
+			<li> <a href="https://www.preschema.com/lecture-notes/grr/"> Grothendieck-Riemann-Roch theorem </a> 2018 </li>
+			<li> Helpful for filling in details: <a href="https://www.preschema.com/teaching/2020-ss/kdescent/">
+					Descent in algebraic K-theory </a> 2020 </li>
+		</ul> </li>
 	<li> <a href="http://people.math.harvard.edu/~gaitsgde/GL/"> Book project
 			'A study in derived algebraic geometry' by D.  Gaitsgory and N.
-			Rozenblym </a>
+			Rozenblym </a> </li>
 	<li> <a href="https://www.math.upenn.edu/~bmor/DAG.html"> derived algebraic
 			geometry seminar </a> (Penn 2016-2017) <ul>
-				<li> <a
-						href="https://github.com/mauroporta/DAG_seminar_UPenn_2016/raw/master/Talks.pdf">
-						Talks </a>
-				<li> <a
-						href="https://github.com/mauroporta/DAG_seminar_UPenn_2016/raw/master/Exercises.pdf">
-						Exercises </a>
-			</ul>
-	<li> More <a href="DAG-resources.html"> here </a>
+				<li> <a href="https://github.com/mauroporta/DAG_seminar_UPenn_2016/raw/master/Talks.pdf">
+						Talks </a> </li>
+				<li> <a href="https://github.com/mauroporta/DAG_seminar_UPenn_2016/raw/master/Exercises.pdf">
+						Exercises </a> </li>
+			</ul> </li>
+	<li> More <a href="DAG-resources.html"> here </a> </li>
 </ul>
 
 <hr>
@@ -224,7 +200,4 @@ Talks
 		<td> </td>
 	</tr>
 </table>
-
-
-</body>
-</html>
+"""

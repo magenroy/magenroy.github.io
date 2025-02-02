@@ -1,7 +1,8 @@
 use dioxus::prelude::*;
 
 use components::Navbar;
-use views::{Blog, Home};
+use components::Header;
+use views::{Blog, Home, Seminar, ResourceList};
 
 mod components;
 mod views;
@@ -12,8 +13,18 @@ enum Route {
     #[layout(Navbar)]
     #[route("/")]
     Home {},
+
+    #[route("/seminar/:name")]
+    Seminar { name: String },
+
+    #[route("/resources/:name")]
+    ResourceList { name: String },
+
     #[route("/blog/:id")]
     Blog { id: i32 },
+
+    #[route("/:..route")]
+    PageNotFound { route: Vec<String> },
 }
 
 const FAVICON: Asset = asset!("/assets/graphics/favicon.ico");
@@ -52,6 +63,18 @@ fn App() -> Element {
         Router::<Route> {}
     }
 }
+
+#[component]
+fn PageNotFound(route: Vec<String>) -> Element {
+    rsx! {
+        main { class: "error",
+            h1 { "Page not found" }
+            p { "The page you requested doesn't exist." }
+            pre { color: "red", "log:\nattemped to navigate to: {route:?}" }
+        }
+    }
+}
+
 // REF: https://dioxuslabs.com/blog/release-060/#static-site-generation-and-isg
 #[server(endpoint = "static_routes")]
 async fn static_routes() -> Result<Vec<String>, ServerFnError> {

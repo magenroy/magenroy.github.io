@@ -1,12 +1,14 @@
 use dioxus::prelude::*;
 
+use crate::Route;
+
 // const PHOTO: Asset = asset!("/assets/graphics/photo.png");
 
 #[component]
 pub fn Header() -> Element {
     rsx! {
-        header { class: "content",
-             table {
+        header {
+             table { class: "content",
                 tr {
                     td { "valign": "top",
                         h1 { "Roy Magen" }
@@ -23,5 +25,6 @@ pub fn Header() -> Element {
                 }
             }
         }
+        // Outlet::<Route> {}
     }
 }
