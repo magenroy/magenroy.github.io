@@ -8,9 +8,15 @@ struct ResourceListApi {
     content: String,
 }
 
+const RESOURCELIST_DIR: Asset = asset!("/assets/static/resources/");
+
 #[component]
 pub fn ResourceList(name: String) -> Element {
-    let path = format!("assets/static/resources/{}.toml", name);
+    // let path = format!("assets/static/resources/{}.toml", name);
+
+    let mut path = RESOURCELIST_DIR.resolve();
+    path.push(&name);
+
 
     let Content: Element = match std::fs::read_to_string(path) {
         Ok(c) => {

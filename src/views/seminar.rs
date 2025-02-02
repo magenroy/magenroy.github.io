@@ -1,4 +1,4 @@
-use dioxus::prelude::*;
+use dioxus::{logger, prelude::*};
 
 #[derive(serde::Deserialize)]
 struct SeminarApi {
@@ -8,9 +8,16 @@ struct SeminarApi {
 
 // const SEMINAR_STYLE: Asset = asset!("/assets/styling/seminar.css");
 
+const SEMINAR_DIR: Asset = asset!("/assets/static/seminars/");
+
 #[component]
 pub fn Seminar(name: String) -> Element {
-    let path = format!("assets/static/seminars/{}.toml", name);
+    // let path = format!("assets/static/seminars/{}.toml", name);
+
+    let mut path = SEMINAR_DIR.resolve();
+    path.push(&name);
+
+    // logger::tracing::debug!("{:?}", path);
 
     let Content: Element = match std::fs::read_to_string(path) {
         Ok(c) => {
