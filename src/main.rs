@@ -61,6 +61,9 @@ fn App() -> Element {
         document::Meta { itemprop: "description", content: "Website of Roy Magen" }
         document::Meta { itemprop: "name", content: "Roy Magen" }
 
+        // NOTE: remember to change this if changing domain name!
+        document::Link { rel: "canonical", href: "https://magenroy.github.io" }
+
         // Global app resources
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
