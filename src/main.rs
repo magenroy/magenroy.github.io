@@ -7,34 +7,45 @@ use views::{Blog, Home, Seminars, Seminar, ResourceList, ResourceLists};
 mod components;
 mod views;
 
+// NOTE: remember to change this if changing domain name!
+const URL: &str = "https://magenroy.github.io";
+
+const DESCRIPTION: &str = "Website of Roy Magen";
+const AUTHOR: &str = "Roy Magen";
+const NAME: &str = "Roy Magen";
+
+const FAVICON: Asset = asset!("/assets/graphics/favicon.ico");
+const MAIN_STYLE: Asset = asset!("/assets/styling/main.css");
+
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
     #[layout(Navbar)]
-    #[route("/")]
-    Home {},
+        #[route("/")]
+        Home {},
 
-    #[route("/seminar")]
-    Seminars {},
+        #[route("/seminar")]
+        Seminars {},
 
-    #[route("/seminar/:name")]
-    Seminar { name: String },
+        #[route("/seminar/:name")]
+        Seminar { name: String },
 
-    #[route("/resources")]
-    ResourceLists { },
+        #[route("/resources")]
+        ResourceLists { },
 
-    #[route("/resources/:name")]
-    ResourceList { name: String },
+        #[route("/resources/:name")]
+        ResourceList { name: String },
 
-    #[route("/blog/:id")]
-    Blog { id: i32 },
+        #[route("/blog/:id")]
+        Blog { id: i32 },
 
-    #[route("/:..route")]
-    PageNotFound { route: Vec<String> },
+        #[route("/:..route")]
+        PageNotFound { route: Vec<String> },
+
+    // #[layout(!Navbar)]
+
+    // #[end_layout]
 }
-
-const FAVICON: Asset = asset!("/assets/graphics/favicon.ico");
-const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
 
 fn main() {
     // dioxus::launch(App);
@@ -56,17 +67,16 @@ fn App() -> Element {
     // Build cool things ✌️
 
     rsx! {
-        document::Meta { name: "description", content: "Website of Roy Magen" }
-        document::Meta { name: "author", content: "Roy Magen" }
-        document::Meta { itemprop: "description", content: "Website of Roy Magen" }
-        document::Meta { itemprop: "name", content: "Roy Magen" }
+        document::Meta { name: "description", content: DESCRIPTION }
+        document::Meta { name: "author", content: AUTHOR }
+        document::Meta { itemprop: "description", content: DESCRIPTION }
+        document::Meta { itemprop: "name", content: NAME }
 
-        // NOTE: remember to change this if changing domain name!
-        document::Link { rel: "canonical", href: "https://magenroy.github.io" }
+        document::Link { rel: "canonical", href: URL }
 
         // Global app resources
         document::Link { rel: "icon", href: FAVICON }
-        document::Link { rel: "stylesheet", href: MAIN_CSS }
+        document::Link { rel: "stylesheet", href: MAIN_STYLE }
 
 
         Router::<Route> {}
