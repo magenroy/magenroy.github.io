@@ -25,9 +25,9 @@ pub fn Seminars() -> Element {
     }; 
 
     rsx! {
-        main {
-            Header {  }
-            section { id: "seminars", class: "content",
+        Header {  }
+        main { class: "content",
+            section { id: "seminars",
                 h2 {"Seminars"}
                 p { "Seminars I have organized:" }
                 // {Content}
