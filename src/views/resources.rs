@@ -25,9 +25,9 @@ pub fn ResourceLists() -> Element {
     }; 
 
     rsx! {
-        Header {  }
-        main { class: "content",
-            section { id: "resources",
+        main {
+            Header {  }
+            section { id: "resources", class: "content",
                 h2 {"Resources"}
                 p { "These are unorganized lists of resources on various topics that I decided to collect at some point in the beginning of my PhD" }
                 // {Content}
