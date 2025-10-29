@@ -15,6 +15,11 @@ pub fn Navbar() -> Element {
                     "Home"
                 }
 
+                a {
+                    href: "https://arxiv.org/a/0009-0000-9597-071X",
+                    "Research"
+                }
+
                 Link {
                     to: Route::Seminars {},
                     "Seminars"

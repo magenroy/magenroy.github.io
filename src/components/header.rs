@@ -13,12 +13,15 @@ pub fn Header() -> Element {
                     td { "valign": "top",
                         h1 { "Roy Magen" }
                         p {
-                            "PhD student at "
-                            br {}
-                            a { href: "https://www.math.columbia.edu/", " Columbia University " }
+                            // "PhD student at "
+                            "Postdoctoral researcher at "
+                            a { href: "https://icms.bg/", "ICMS" } 
+                            // br {}
+                            // a { href: "https://www.math.columbia.edu/", " Columbia University " }
                             br {}
                         }
-                        p { "Email: magenroy[at]math[dot]columbia[dot]edu" }
+                        p { "Email: magen[dot]roy[at]columbia[dot]edu" }
+                        p { a { href: "https://arxiv.org/a/0009-0000-9597-071X", "Research papers (arXiv)" } } 
                     }
                     td { "\u{a0} \u{a0} \u{a0} \u{a0} \u{a0}" }
                     // td { img { src: PHOTO, id: "photo" } }
