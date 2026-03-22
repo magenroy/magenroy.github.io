@@ -67,7 +67,7 @@ jobs:
         # run: dx bundle --platform web
         # run: dx bundle --release --platform web
         run: |
-          dx bundle --platform web --ssg
+          dx bundle --release --platform web --ssg
           # cp -r ./static/* ./docs/public
           cp ./index.html ./docs/public
           # HACK: ^ for some reason the bundle command doesn't prerender the home page
