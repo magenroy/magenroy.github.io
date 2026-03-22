@@ -2,12 +2,12 @@
 name = "magenroy-website"
 version = "0.1.0"
 authors = ["Roy Magen <magenroy@gmail.com>"]
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dioxus = { version = "0.6.2", features = ["router", "fullstack"] }
+dioxus = { version = "0.7.3", features = ["router", "fullstack"] }
 serde = { version = "1.0.217", features = [ "derive" ]}
 toml = { version = "0.8.19" }
 
