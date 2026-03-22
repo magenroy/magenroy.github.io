@@ -67,10 +67,11 @@ jobs:
         # run: dx bundle --platform web
         # run: dx bundle --release --platform web
         run: |
-          # dx bundle --platform web --ssg
-          dx bundle --platform web --ssg
-          ls -a
-          cp -r ./assets/static/* ./docs/public
+          # dx bundle --release --platform web --ssg
+          # cp -r ./static/* ./docs/public
+          dx bundle --platform web
+          mv ./docs/public/* ./docs
+          cp ./docs/index.html ./docs/404.html
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
@@ -92,7 +93,8 @@ jobs:
         with:
           # Upload dist dir
           # path: './static/' # for use with ssg
-          path: './docs/public' # actually use this with ssg since I just copy the static files to docs/public
+          # path: './docs/public' # actually use this with ssg since I just copy the static files to docs/public
+          path: './docs' # CSR
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
