@@ -70,7 +70,7 @@ jobs:
           # dx bundle --platform web --ssg
           dx bundle --platform web --ssg
           ls -a
-          cp -r ./static/* ./docs/public
+          cp -r ./assets/static/* ./docs/public
 
       # Deploy to gh-pages branch
       # - name: Deploy Project 🚀
