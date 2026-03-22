@@ -13,6 +13,7 @@ long_description = "Personal website of Roy Magen"
 
 [web.app]
 # base_path = "public"
+# base_path = "magenroy.github.io" # CSR
 
 # HTML title tag content
 title = "Roy Magen"

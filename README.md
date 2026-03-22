@@ -20,10 +20,12 @@ dx serve --platform desktop
 
 ### Option 1: publish from branch
 
-Inside `Dioxus.toml`, make sure that `out_dir = "docs"` and maybe `default_platform = "web"` are under `[application]`, and that `base_path = "publich"` is under `[web.app]`
+Inside `Dioxus.toml`, make sure that `out_dir = "docs"` and maybe `default_platform = "web"` are under `[application]`, and that `base_path = "publish"` is under `[web.app]`
 
 In the Github pages settings, set to publish from the appropriate branch, from the "docs" directory.
 
 When you want to publish, run "dx bundle", and then git push everything. After Github deploys the site, it should be in the  "magenroy.github.io/public" URL
+
+See https://dioxuslabs.com/learn/0.7/guides/deploy/
 
 ### Option 2:
