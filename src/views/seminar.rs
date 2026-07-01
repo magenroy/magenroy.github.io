@@ -1,6 +1,6 @@
 use dioxus::{logger, prelude::*};
 
-use crate::components::Header;
+use crate::components::{Header, Seminars};
 
 #[derive(serde::Deserialize)]
 struct SeminarApi {
@@ -28,23 +28,7 @@ pub fn SeminarsView() -> Element {
         Header {  }
         main { class: "content",
             section { id: "seminars",
-                h2 {"Seminars"}
-                p { "Seminars I have organized:" }
-                // {Content}
-                ul {
-                    li {
-                        // a { href: "https://math.columbia.edu/~magenroy/DAG-seminar.html", "Derived algebraic geometry seminar at Columbia University" }
-                        a { href: "Columbia/DAG-seminar.html", "Derived algebraic geometry seminar at Columbia University" }
-                    }
-                    li {
-                        // a { href: "https://math.columbia.edu/~magenroy/motivicseminar.html", "Motivic homotopy theory seminar at Columbia University" }
-                        a { href: "Columbia/motivicseminar.html", "Motivic homotopy theory seminar at Columbia University" }
-                    }
-                    li {
-                        // a { href: "https://math.columbia.edu/~magenroy/MilnorWittMotivesSeminar.html", "Milnor-Witt motives seminar at Columbia University" }
-                        a { href: "Columbia/MilnorWittMotivesSeminar.html", "Milnor-Witt motives seminar at Columbia University" }
-                    }
-                }
+                Seminars {}
             }
         }
     }
