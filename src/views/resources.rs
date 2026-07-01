@@ -33,13 +33,16 @@ pub fn ResourceLists() -> Element {
                 // {Content}
                 ul {
                     li {
-                        a { href: "https://math.columbia.edu/~magenroy/resources.html", "Unsorted resources" }
+                        // a { href: "https://math.columbia.edu/~magenroy/resources.html", "Unsorted resources" }
+                        a { href: "Columbia/resources.html", "Unsorted resources" }
                     }
                     li {
-                        a { href: "https://math.columbia.edu/~magenroy/DAG-resources.html", "DAG/SAG resources" }
+                        // a { href: "https://math.columbia.edu/~magenroy/DAG-resources.html", "DAG/SAG resources" }
+                        a { href: "Columbia/DAG-resources.html", "DAG/SAG resources" }
                     }
                     li {
-                        a { href: "https://math.columbia.edu/~magenroy/Motives-resources.html", "Motives resources" }
+                        // a { href: "https://math.columbia.edu/~magenroy/Motives-resources.html", "Motives resources" }
+                        a { href: "Columbia/Motives-resources.html", "Motives resources" }
                     }
                 }
             }
