@@ -79,7 +79,7 @@ fn main() {
                         // binary and static assets required for the app to run
                         // .clear_cache(false)
                 )
-                .enable_out_of_order_streaming()
+                // .enable_out_of_order_streaming()
         })
         .launch(App);
 }
