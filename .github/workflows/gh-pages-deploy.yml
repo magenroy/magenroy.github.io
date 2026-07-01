@@ -68,6 +68,7 @@ jobs:
         # run: dx bundle --release --platform web
         run: |
           dx build --release --platform web --ssg
+          # ^ seems like I need to do this first to render the index pages for the static routes?
           dx bundle --release --platform web --ssg
           # cp -r ./static/* ./docs/public
           cp ./index.html ./docs/public

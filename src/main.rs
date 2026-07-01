@@ -77,7 +77,7 @@ fn main() {
                         )
                         // Don't clear the public folder on every build. The public folder has other files including the wasm
                         // binary and static assets required for the app to run
-                        .clear_cache(false)
+                        // .clear_cache(false)
                 )
                 .enable_out_of_order_streaming()
         })
