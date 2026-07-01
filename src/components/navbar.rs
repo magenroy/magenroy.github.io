@@ -21,12 +21,12 @@ pub fn Navbar() -> Element {
                 }
 
                 Link {
-                    to: Route::Seminars {},
+                    to: Route::SeminarsView {},
                     "Seminars"
                 }
 
                 Link {
-                    to: Route::ResourceLists {},
+                    to: Route::ResourcesView {},
                     "Resources"
                 }
 
