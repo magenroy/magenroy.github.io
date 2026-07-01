@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 
 
 #[component]
-pub fn Home() -> Element {
+pub fn Index() -> Element {
     rsx! {
         Header {}
         main { class: "content",

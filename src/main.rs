@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use components::Navbar;
-use views::{Blog, Home, SeminarsView, Seminar, ResourceList, ResourcesView};
+use views::{Blog, Index, SeminarsView, Seminar, ResourceList, ResourcesView};
 
 mod components;
 mod views;
@@ -21,7 +21,7 @@ pub const MAIN_STYLE: Asset = asset!("/assets/styling/main.css");
 pub enum Route {
     #[layout(Navbar)]
         #[route("/")]
-        Home {},
+        Index {},
 
         #[route("/seminar")]
         SeminarsView {},

@@ -11,7 +11,7 @@ pub fn Navbar() -> Element {
         nav {
             id: "navbar",
                 Link {
-                    to: Route::Home {},
+                    to: Route::Index {},
                     "Home"
                 }
 
