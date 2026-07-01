@@ -1,7 +1,5 @@
 use dioxus::prelude::*;
 
-use crate::Route;
-
 // const PHOTO: Asset = asset!("/assets/graphics/photo.png");
 
 #[component]

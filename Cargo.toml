@@ -9,7 +9,7 @@ edition = "2024"
 [dependencies]
 dioxus = { version = "0.7.9", features = ["router", "fullstack"] }
 serde = { version = "1.0.217", features = [ "derive" ]}
-toml = { version = "0.8.23" }
+toml = { version = "1.1.2" }
 
 [features]
 default = ["web"]
