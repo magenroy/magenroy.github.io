@@ -1,4 +1,5 @@
 use crate::components::{Header, Seminars, ResourceLists};
+// use crate::components::Header;
 use dioxus::prelude::*;
 
 
@@ -11,7 +12,7 @@ pub fn Index() -> Element {
             section { id: "seminars", Seminars {}}
             section { id: "resources", ResourceLists {}}
         }
-        footer {}
+        // footer {}
     }
 }
 
@@ -45,7 +46,7 @@ pub fn About() -> Element {
 // }
 //
 // #[component]
-// pub fn Resources() -> Element {
+// pub fn ResourceLists() -> Element {
 //     rsx! {
 //         h2 {"Resources"}
 //         p { "These are unorganized lists of resources on various topics that I decided to collect at some point in the beginning of my PhD" }
