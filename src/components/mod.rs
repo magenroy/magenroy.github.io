@@ -5,7 +5,7 @@ mod header;
 pub use header::Header;
 
 mod seminars;
-pub use seminars::{Seminars, Seminar};
+pub use seminars::Seminars;
 
 mod resources;
-pub use resources::{ResourceLists, ResourceList};
+pub use resources::ResourceLists;
