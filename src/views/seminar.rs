@@ -14,15 +14,15 @@ const SEMINAR_DIR: Asset = asset!("/assets/static/seminars/");
 
 #[component]
 pub fn Seminars() -> Element {
-    let path = SEMINAR_DIR.resolve();
-    let Content: Element = match std::fs::read_dir(path) {
-        Ok(x) => rsx! {
-            "a"
-        },
-        Err(_) => rsx! {
-            "b"
-        },
-    }; 
+    // let path = SEMINAR_DIR.resolve();
+    // let Content: Element = match std::fs::read_dir(path) {
+    //     Ok(x) => rsx! {
+    //         "a"
+    //     },
+    //     Err(_) => rsx! {
+    //         "b"
+    //     },
+    // }; 
 
     rsx! {
         Header {  }

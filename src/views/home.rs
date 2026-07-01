@@ -1,4 +1,4 @@
-use crate::components::Header;
+use crate::components::{Header, Seminars, ResourceLists};
 use dioxus::prelude::*;
 
 
@@ -9,7 +9,7 @@ pub fn Home() -> Element {
         main { class: "content",
             section { id: "about", About {}}
             section { id: "seminars", Seminars {}}
-            section { id: "resources", Resources {}}
+            section { id: "resources", ResourceLists {}}
         }
         footer {}
     }
@@ -25,40 +25,40 @@ pub fn About() -> Element {
     }
 }
 
-#[component]
-pub fn Seminars() -> Element {
-    rsx! {
-            h2 {"Seminars"}
-            p { "Seminars I have organized:" }
-            ul {
-                li {
-                a { href: "https://math.columbia.edu/~magenroy/DAG-seminar.html", "Derived algebraic geometry seminar at Columbia University" }
-            }
-                li {
-                a { href: "https://math.columbia.edu/~magenroy/motivicseminar.html", "Motivic homotopy theory seminar at Columbia University" }
-            }
-                li {
-                a { href: "https://math.columbia.edu/~magenroy/MilnorWittMotivesSeminar.html", "Milnor-Witt motives seminar at Columbia University" }
-            }
-        }
-    }
-}
-
-#[component]
-pub fn Resources() -> Element {
-    rsx! {
-        h2 {"Resources"}
-        p { "These are unorganized lists of resources on various topics that I decided to collect at some point in the beginning of my PhD" }
-        ul {
-            li {
-            a { href: "https://math.columbia.edu/~magenroy/resources.html", "Unsorted resources" }
-        }
-            li {
-            a { href: "https://math.columbia.edu/~magenroy/DAG-resources.html", "DAG/SAG resources" }
-        }
-            li {
-            a { href: "https://math.columbia.edu/~magenroy/Motives-resources.html", "Motives resources" }
-        }
-    }
-}
-}
+// #[component]
+// pub fn Seminars() -> Element {
+//     rsx! {
+//             h2 {"Seminars"}
+//             p { "Seminars I have organized:" }
+//             ul {
+//                 li {
+//                 a { href: "https://math.columbia.edu/~magenroy/DAG-seminar.html", "Derived algebraic geometry seminar at Columbia University" }
+//             }
+//                 li {
+//                 a { href: "https://math.columbia.edu/~magenroy/motivicseminar.html", "Motivic homotopy theory seminar at Columbia University" }
+//             }
+//                 li {
+//                 a { href: "https://math.columbia.edu/~magenroy/MilnorWittMotivesSeminar.html", "Milnor-Witt motives seminar at Columbia University" }
+//             }
+//         }
+//     }
+// }
+//
+// #[component]
+// pub fn Resources() -> Element {
+//     rsx! {
+//         h2 {"Resources"}
+//         p { "These are unorganized lists of resources on various topics that I decided to collect at some point in the beginning of my PhD" }
+//         ul {
+//             li {
+//             a { href: "https://math.columbia.edu/~magenroy/resources.html", "Unsorted resources" }
+//         }
+//             li {
+//             a { href: "https://math.columbia.edu/~magenroy/DAG-resources.html", "DAG/SAG resources" }
+//         }
+//             li {
+//             a { href: "https://math.columbia.edu/~magenroy/Motives-resources.html", "Motives resources" }
+//         }
+//     }
+// }
+// }

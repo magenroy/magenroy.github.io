@@ -14,15 +14,15 @@ const RESOURCELIST_DIR: Asset = asset!("/assets/static/resources/");
 
 #[component]
 pub fn ResourceLists() -> Element {
-    let path = RESOURCELIST_DIR.resolve();
-    let Content: Element = match std::fs::read_dir(path) {
-        Ok(x) => rsx! {
-            "a"
-        },
-        Err(_) => rsx! {
-            "b"
-        },
-    }; 
+    // let path = RESOURCELIST_DIR.resolve();
+    // let Content: Element = match std::fs::read_dir(path) {
+    //     Ok(x) => rsx! {
+    //         "a"
+    //     },
+    //     Err(_) => rsx! {
+    //         "b"
+    //     },
+    // }; 
 
     rsx! {
         Header {  }
