@@ -13,7 +13,7 @@ struct ResourceListApi {
 const RESOURCELIST_DIR: Asset = asset!("/assets/static/resources/");
 
 #[component]
-pub fn ResourceLists() -> Element {
+pub fn ResourcesView() -> Element {
     // let path = RESOURCELIST_DIR.resolve();
     // let Content: Element = match std::fs::read_dir(path) {
     //     Ok(x) => rsx! {

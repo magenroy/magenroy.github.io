@@ -6,8 +6,8 @@ pub use blog::Blog;
 
 mod seminar;
 pub use seminar::Seminar;
-pub use seminar::Seminars;
+pub use seminar::SeminarsView;
 
 mod resources;
 pub use resources::ResourceList;
-pub use resources::ResourceLists;
+pub use resources::ResourcesView;

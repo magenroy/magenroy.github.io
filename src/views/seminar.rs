@@ -13,7 +13,7 @@ struct SeminarApi {
 const SEMINAR_DIR: Asset = asset!("/assets/static/seminars/");
 
 #[component]
-pub fn Seminars() -> Element {
+pub fn SeminarsView() -> Element {
     // let path = SEMINAR_DIR.resolve();
     // let Content: Element = match std::fs::read_dir(path) {
     //     Ok(x) => rsx! {
