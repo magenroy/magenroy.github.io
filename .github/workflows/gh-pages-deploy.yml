@@ -67,6 +67,7 @@ jobs:
         # run: dx bundle --platform web
         # run: dx bundle --release --platform web
         run: |
+          # for some reason release mode does not work properly
           dx build --platform web --ssg
           # ^ seems like I need to do this first to render the index pages for the static routes?
           dx bundle --platform web --ssg
